@@ -7,7 +7,6 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
-
 var app = express();
 
 // Loading routes
@@ -15,9 +14,9 @@ var app = express();
 var contactListRoutes = require('./routes/contactList');
 
 // Middlewares
-
 app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+
 
 // Cors
 

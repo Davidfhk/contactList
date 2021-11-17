@@ -7,12 +7,9 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ClientSchema = Schema({
-
-	name: String,
-	lastName: String,
+var ContactSchema = Schema({
+	contactName: String,
 	phone: String
+},{ _id : false });
 
-});
-
-module.exports = mongoose.model('client',ClientSchema); 
+module.exports = ContactSchema; 

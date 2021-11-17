@@ -5,13 +5,23 @@
 
 'use strict';
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 // Loading mongoose
 var mongoose = require('mongoose');
 
 // Loading server
 var app = require('./app/app');
 
-// mongoose.Promise = global.Promise;
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('./swagger.json');
+
+app.use(
+  '/api/docs',
+  swaggerUi.serve, 
+  swaggerUi.setup(swaggerDocument)
+);
 
 mongoose.connect('mongodb://mongo:27017/docker-node-mongo',{useNewUrlParser: true})
 		.then(()=>{
@@ -22,3 +32,5 @@ mongoose.connect('mongodb://mongo:27017/docker-node-mongo',{useNewUrlParser: tru
 const port = 3000;
 
 app.listen(port, () => console.log('Server running...'));
+
+module.exports = app;
