@@ -82,3 +82,6 @@ La response tendrá el siguiente formato:
   He hecho uso de swagger para hacer la documentación y poder interactuar con la api, esto se encuentra en la ruta
     localhost/api/docs
 
+  ``npm test``
+
+  Para ejecutar los tests 
