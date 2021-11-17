@@ -74,6 +74,8 @@ La response tendrá el siguiente formato:
 
 ## EJECUCIÓN
 
+  Primero hay que añadir en el fichero .env el USER_ID y API_KEY de neutrinoapi
+
   ``docker-compose up -d --build``  
 
   la url para llamar a la api será:
